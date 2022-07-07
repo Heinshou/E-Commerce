@@ -10,9 +10,9 @@ import { useEffect } from "react"
 import {getAllProducts} from "./store/slices/producs.slice"
 
 //Styles
-import './App.css'
 import HeaderScreen from "./Components/Shared/HeaderScreen"
 import ProductScreen from "./Components/Products/ProductScreen"
+import FooterScreen from "./Components/Shared/FooterScreen"
 
 function App() {
 
@@ -27,8 +27,9 @@ function App() {
 
   return (
     <div className="App">
-    <HeaderScreen></HeaderScreen>
-        <Routes>
+    <HeaderScreen/>
+    <main>
+      <Routes>
           <Route path='/' element={<HomeScreen/>}/>
           <Route path='/login' element={<LoginScreen/>}/>
 
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path='/product/:id' element={<ProductScreen/>}></Route>
         </Routes>
+    </main>
+    <FooterScreen/>
+        
     </div>
   )
 }
