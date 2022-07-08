@@ -1,8 +1,27 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { getAllProductCart } from '../../store/slices/cart.slice'
+import getConfig from '../../utils/getConfig'
 
 const ProductInfoId = ({ product }) => {
 
     const [counter, setCounter] = useState(1)
+
+    const dispatch = useDispatch()
+    
+    const addToCart = () => {
+        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+
+        const addProduct = {
+            id:product.id,
+            quantity: counter
+        }
+
+        axios.post(URL, addProduct, getConfig())
+            .then(res => dispatch(getAllProductCart(res.data)))
+            .catch(err => console.log(err.data))
+    }
 
     const minusCounter = () => {
         const minus = counter - 1
@@ -14,8 +33,6 @@ const ProductInfoId = ({ product }) => {
     const plusCounter = () => {
         setCounter(counter + 1)
     }
-
-    console.log(product)
 
     return (
         <article className='product__info'>
@@ -30,7 +47,10 @@ const ProductInfoId = ({ product }) => {
                 <div>{counter}</div>
                 <div className='product__info__plus' onClick={plusCounter}>+</div>
             </div>
-            <button className='card__product__btn'>Add  to Cart
+            <button
+                onClick={addToCart}
+                className='card__product__btn'>
+                Add  to Cart
                 <i className="fa-solid fa-cart-arrow-down"></i>
             </button>
         </article>

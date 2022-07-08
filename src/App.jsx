@@ -13,8 +13,29 @@ import {getAllProducts} from "./store/slices/producs.slice"
 import './App.css'
 import HeaderScreen from "./Components/Shared/HeaderScreen"
 import ProductScreen from "./Components/Products/ProductScreen"
+import axios from "axios"
 
 function App() {
+
+  useEffect(() => {
+
+    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
+  
+      const newUser = {
+        firstName: "Mike",
+        lastName: "Chavez",
+        email: "maike@gmail.com",
+        password: "pass1234",
+        phone: "1234567891",
+        role: "admin"
+      }
+  
+    
+    axios.post(URL, newUser)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.data))
+  }, [])
+  
 
   const dispatch = useDispatch()
 
