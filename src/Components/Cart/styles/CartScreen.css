@@ -1,0 +1,11 @@
+.card-screen {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-screen button {
+    width: 60%;
+}

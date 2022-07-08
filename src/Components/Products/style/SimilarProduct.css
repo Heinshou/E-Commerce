@@ -1,0 +1,12 @@
+.similar__products {
+    margin-bottom: 2em;
+}
+.products__container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.similar-products-title {
+    text-align: center;
+}

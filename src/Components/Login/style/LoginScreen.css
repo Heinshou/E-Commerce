@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    min-height: 90vh;
 }
 
 .login__form{
@@ -10,6 +10,10 @@
     box-shadow: 0 0 20px #0005;
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 3em;
+}
+.logger-container {
+    text-align: center;
 }
 
 .login__test{
