@@ -10,32 +10,12 @@ import { useEffect } from "react"
 import {getAllProducts} from "./store/slices/producs.slice"
 
 //Styles
-import './App.css'
 import HeaderScreen from "./Components/Shared/HeaderScreen"
 import ProductScreen from "./Components/Products/ProductScreen"
-import axios from "axios"
+import FooterScreen from "./Components/Shared/FooterScreen"
+
 
 function App() {
-
-  useEffect(() => {
-
-    const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/users'
-  
-      const newUser = {
-        firstName: "Mike",
-        lastName: "Chavez",
-        email: "maike@gmail.com",
-        password: "pass1234",
-        phone: "1234567891",
-        role: "admin"
-      }
-  
-    
-    axios.post(URL, newUser)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err.data))
-  }, [])
-  
 
   const dispatch = useDispatch()
 
@@ -48,8 +28,9 @@ function App() {
 
   return (
     <div className="App">
-    <HeaderScreen></HeaderScreen>
-        <Routes>
+    <HeaderScreen/>
+    <main>
+      <Routes>
           <Route path='/' element={<HomeScreen/>}/>
           <Route path='/login' element={<LoginScreen/>}/>
 
@@ -59,6 +40,9 @@ function App() {
           </Route>
           <Route path='/product/:id' element={<ProductScreen/>}></Route>
         </Routes>
+    </main>
+    <FooterScreen/>
+        
     </div>
   )
 }

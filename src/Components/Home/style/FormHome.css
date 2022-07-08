@@ -1,0 +1,14 @@
+.form__home {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.form__home input {
+    padding: .5em;
+    border:none;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    font-size: 1em;
+    outline-color: var(--secondary-color) ;
+    
+}
