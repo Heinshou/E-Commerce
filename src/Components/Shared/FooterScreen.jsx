@@ -9,7 +9,6 @@ const FooterScreen = () => {
         <h2>Collaborators</h2>
         <div className='container-colaborators'>
             <article>
-              
               <h3>Gabriel Sanchez</h3>
               <ul>
                 <li><a href="https://www.linkedin.com/in/gabriel-sanchez-717222206/"><BsLinkedin/></a></li>

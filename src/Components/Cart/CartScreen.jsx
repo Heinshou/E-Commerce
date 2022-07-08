@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import getConfig from '../../utils/getConfig'
 import CartInfo from './CartInfo'
-
+import './styles/CartScreen.css'
 const CartScreen = () => {
 
   const cart = useSelector(state => state.cart)
@@ -26,7 +26,7 @@ const CartScreen = () => {
 
 
   return (
-    <div>
+    <div className='card-screen'>
       <button onClick={postPurchase}>
         <h3>
           Confirm Purchase

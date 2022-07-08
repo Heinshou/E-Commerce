@@ -15,7 +15,7 @@
 .header__menuham{
     font-size: 1.4rem;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
 }
 
@@ -30,18 +30,20 @@
     box-shadow: 0 0 20px 0 #0009;
     transition: transform 600ms ease;
     transform: translateX(105%);
+    z-index: 2;
 }
 
 .navbar__open{
     transition: transform 600ms ease;
     transform: translateX(0);
-
+    z-index: 2;
 }
 
 .navbar__list{
     display: flex;
     flex-direction: column;
     gap: 40px;
+    text-align: center;
 }
 
 .navbar__links{

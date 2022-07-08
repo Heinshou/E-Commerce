@@ -42,10 +42,10 @@ const ProductScreen = () => {
     }
 
     return (
-        <div>
+        <>
             <div className='product'>
                 <div className='slider'>
-                    <div onClick={clickPrev} className='slider__prev'>&#60;</div>
+                    <span onClick={clickPrev} className='slider__prev'>&#60;</span>
                     <div  className={`slider__container ${classImg[indexClass]}`}>
                         {
                             product?.productImgs.map(imgSrc => (
@@ -58,15 +58,16 @@ const ProductScreen = () => {
                             ))
                         }
                     </div>
-                    <div onClick={clickNext} className='slider__next'>&#62;</div>
-                </div>
-            </div>
-            <ProductInfoId
+                    <span onClick={clickNext} className='slider__next'>&#62;</span>
+                </div> 
+                <ProductInfoId
                 product={product}
-            />
+                />
+            </div>
+           
             <SimilarProducts
                 product={product} />
-        </div>
+        </>
     )
 }
 

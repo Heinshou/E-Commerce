@@ -34,9 +34,9 @@ const Form = () => {
     <form onSubmit={handleSubmit(submit)} className='login__form'>
         <ul className='login__test'>
           <li className='flex__login'>
-            <b>Email:</b>mason@gmail.com
+            <b>Email:</b>maike@gmail.com
           </li>
-          <li className='flex__login'><b>Contraseña:</b>mason1234</li>
+          <li className='flex__login'><b>Contraseña:</b>pass1234</li>
         </ul>
         <h2 className="login__title">Enter your information</h2>
         <ul className="login__list">
