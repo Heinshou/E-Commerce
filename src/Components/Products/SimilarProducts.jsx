@@ -7,7 +7,7 @@ const SimilarProducts = ({product}) => {
     const AllProducts = useSelector(state => state.products)
     const [filterProducts, setFilterProducts] = useState()
 
-    console.log(AllProducts)
+    
 
     useEffect(() => {
         if(AllProducts.length !== 0){
@@ -17,6 +17,7 @@ const SimilarProducts = ({product}) => {
      
     }, [product])
     
+    console.log(product)
   return (
     <article className='similar__products'>sca
         <h2 className='similar-_products'>Discover Similar Items</h2>
@@ -26,8 +27,8 @@ const SimilarProducts = ({product}) => {
                 if(e.title !== product.title){ 
                     return(
                         <ProductCard
-                        key={product.id}
-                        product={product}
+                        key={e.id}
+                        product={e}
                         />)
                     }
                 })
